@@ -2,10 +2,10 @@ name: Update README
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Every day at midnight
+    - cron: "0 0 * * *"
   push:
     branches:
-      - '*' 
+      - "*"
 
 jobs:
   update-readme:
@@ -13,14 +13,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
 
+      - name: Set up Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+
       - name: Run update script
         run: python update_readme.py
+
+      - name: Set up Git credentials
+        run: git config --global url."https://${{ secrets.MYPROFILE_TOKEN }}@github.com/".insteadOf "https://github.com/"
 
       - name: Commit and push
         run: |
