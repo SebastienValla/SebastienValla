@@ -19,6 +19,7 @@ Hello, I'm Sebastien Valla, a Blockchain EVM Developer based in Toulouse, France
 
 ## Contact Me
 
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat-square&logo=linkedin&labelColor=blue)](https://www.linkedin.com/in/s%C3%A9bastien-valla-1ba667a0/)
 
 [![Email](https://img.shields.io/badge/Email-sebastien%40codyseum.com-brightgreen)](mailto:sebastien@codyseum.com)
