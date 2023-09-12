@@ -29,13 +29,10 @@ jobs:
       - name: Run update script
         run: python update_readme.py
 
-      - name: Set up Git credentials
-        run: git config --global url."https://${{ secrets.MYPROFILE_TOKEN }}@github.com/".insteadOf "https://github.com/"
-
       - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
           git commit -m "Automatically update README"
-          git push
+          git push https://${{ secrets.MYPROFILE_TOKEN }}@github.com/SebastienValla/SebastienValla.git
